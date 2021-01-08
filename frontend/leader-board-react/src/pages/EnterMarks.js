@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 
 class EnterMarks extends React.Component {
     constructor(props) {
@@ -6,11 +7,11 @@ class EnterMarks extends React.Component {
         this.state = {
             rollno: null,
             name: '',
-            pmarks: 0,
-            cmarks: 0,
-            mmarks: 0,
-            total: 0,
-            percent: 0
+            pmarks: null,
+            cmarks: null,
+            mmarks: null,
+            total: null,
+            percent: null
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -20,6 +21,20 @@ class EnterMarks extends React.Component {
     handleSubmit(event){
         alert('Submiting information');
         event.preventDefault();
+
+        this.state.total = Number(this.state.pmarks)+Number(this.state.cmarks)+Number(this.state.mmarks);
+        this.state.percent = Number(this.state.total)/3;
+
+        var data = this.state
+		var postUrl = "/api/enterMarks";
+		axios.post(postUrl, data, {
+		})
+			.then(res => {
+				console.log(res);
+			}).catch(err => {
+				console.log(err);
+			})
+
     }
 
     handleChange(event){
@@ -85,13 +100,21 @@ class EnterMarks extends React.Component {
 
                 <label>
                     Total:
-                    <p>{Number(this.state.pmarks)+Number(this.state.cmarks)+Number(this.state.mmarks)}</p>
+                    <input 
+                        name = "total"
+                        type = "number"
+                        value = {Number(this.state.pmarks)+Number(this.state.cmarks)+Number(this.state.mmarks)} 
+                        readOnly = {true} />
                 </label>
                 <br />
 
                 <label>
                     Percent:
-                    <p>{Number(this.state.total)}</p>
+                    <input 
+                        name = "percent"
+                        type = "number"
+                        value = {(Number(this.state.pmarks)+Number(this.state.cmarks)+Number(this.state.mmarks))/3} 
+                        readOnly = {true}/>
                 </label>
                 <br />
 

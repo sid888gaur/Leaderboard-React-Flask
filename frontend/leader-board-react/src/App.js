@@ -12,8 +12,8 @@ function App() {
 
           <Switch>
             <Route exact path='/' component={Home} />
-            <Route exact path='/enter_marks' component={EnterMarks} />
-            <Route exact path='/view_leaderboard' component={ViewLeaderboard} />
+            <Route exact path='/enterMarks' component={EnterMarks} />
+            <Route exact path='/viewLeaderboard' component={ViewLeaderboard} />
           </Switch>
 
         </Router>

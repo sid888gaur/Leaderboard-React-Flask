@@ -4,13 +4,13 @@ import { Link, withRouter } from 'react-router-dom';
 function Navigation() {
     return (
         <div className = 'navigation'>
-            <Link to="/enter_marks">
+            <Link to="/enterMarks">
                 <button variant="outlined">
                     Enter marks
                 </button>
             </Link>
 
-            <Link to="/view_leaderboard">
+            <Link to="/viewLeaderboard">
                 <button variant="outlined">
                     Leaderboard
                 </button>
