@@ -6,8 +6,8 @@ with search and sort functionality
 
 ### Database - MySQL
 
-make a user 'root' and give a password 'password' change the value of password
-in **app.py** accordingly.
+make a user 'root' and give a password 'password' change the value of ```app.config['MYSQL_PASSWORD'] = 'root'```
+in **api/app.py** accordingly.
 
 **SQL queries for making database and creating a table:**
 - CREATE DATABASE almabetter;
