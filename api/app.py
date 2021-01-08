@@ -24,22 +24,23 @@ def post_student_info():
 	if request.method == 'POST':
 		details = json.loads(request.data)
 
+
 		print("------------------------")
-		print(type(details['percent']))
+		print(details['name'])
 		print("------------------------")
 
+
 		rollno = int(details['rollno'])
-		name = str(details['name'])
-		pmarks= int(details['pmarks'])
+		name = details['name']
+		pmarks = int(details['pmarks'])
 		cmarks = int(details['cmarks'])
 		mmarks = int(details['mmarks'])
-		total = int(details['total'])
+		total = details['total']
 		percent = float(details['percent'])
 
 
 		cur = mysql.connection.cursor()
-		cur.execute(""" INSERT INTO MyUsers (rollno, name, pmarks, cmarks, mmarks, total, percent) VALUES (%d, %s, %d, %d, %d, %d, %f)""",
-			(int(rollno), str(name), int(pmarks), int(cmarks), int(mmarks), int(total), float(percent)))
+		cur.execute(""" INSERT INTO MyUsers (rollno, name, pmarks, cmarks, mmarks, total, percent) VALUES (%s, %s, %s, %s, %s, %s, %s)""",(int(rollno), str(name), int(pmarks), int(cmarks), int(mmarks), int(total), float(percent)))
 		mysql.connection.commit()
 		cur.close()
 		return {'SUCCESS':200}
