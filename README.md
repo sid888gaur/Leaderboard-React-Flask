@@ -8,6 +8,7 @@ with search and sort functionality
 
 make a user 'root' and give a password 'password' change the value of ```app.config['MYSQL_PASSWORD'] = 'root'```
 in **api/app.py** accordingly.
+- CREATE USER 'newuser'@'localhost' IDENTIFIED BY 'password';
 
 **SQL queries for making database and creating a table:**
 - CREATE DATABASE almabetter;
