@@ -1,7 +1,7 @@
-CREATE TABLE MyUser ( rollno int unsigned not null, name varchar(50) not null ,
+CREATE TABLE MyUsers ( rollno int unsigned not null, name varchar(50) not null ,
 pmarks smallint unsigned not null , cmarks smallint unsigned not null , mmarks smallint unsigned not null , 
-total smallint unsigned not null , percent smallint unsigned not null );
+total smallint unsigned not null , percent FLOAT );
 
 
 
-INSERT INTO MyUser (rollno, name, pmarks, cmarks, mmarks, total, percent) VALUES (20171198, 'Siddharth Gaur', 10, 14, 0, 24, 8);
+INSERT INTO MyUsers (rollno, name, pmarks, cmarks, mmarks, total, percent) VALUES (20171198, 'Siddharth Gaur', 10, 14, 0, 24, 8);

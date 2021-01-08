@@ -5,13 +5,13 @@ class EnterMarks extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            rollno: null,
+            rollno: 0,
             name: '',
-            pmarks: null,
-            cmarks: null,
-            mmarks: null,
-            total: null,
-            percent: null
+            pmarks: 0,
+            cmarks: 0,
+            mmarks: 0,
+            total: 0,
+            percent: 0
         };
 
         this.handleChange = this.handleChange.bind(this);
