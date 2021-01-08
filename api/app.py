@@ -8,7 +8,7 @@ CORS(app)
 
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = 'Gaur1234'
+app.config['MYSQL_PASSWORD'] = 'root'
 app.config['MYSQL_DB'] = 'almabetter'
 
 mysql = MySQL(app)
@@ -23,11 +23,6 @@ def home():
 def post_student_info():
 	if request.method == 'POST':
 		details = json.loads(request.data)
-
-
-		print("------------------------")
-		print(details['name'])
-		print("------------------------")
 
 
 		rollno = int(details['rollno'])
